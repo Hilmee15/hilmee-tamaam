@@ -30,6 +30,7 @@
       links: [['Live demo', '#'], ['Source', 'https://github.com/Hilmee15/DeepfakeDetectorWeb']],
       kind: 'Hardest debugging of the year',
       note: 'The model worked in a notebook and failed in a container. Two missing shared libraries and a curl-less base image were the whole story.',
+      img: 'images/deepfake/deepfakeHome.png',
       ph: 'Replace with a 16:9 screenshot'
     },
     {
@@ -43,6 +44,7 @@
       links: [['Live demo', '#'], ['Source', 'https://github.com/Hilmee15/e-archive']],
       kind: 'Constraint-driven',
       note: "Dropping the build step wasn't nostalgia — it was the only way this could live on the hosting the client already pays for.",
+      img: 'images/e-archive/e-archiveHome.jpeg',
       ph: 'Replace with a 16:9 screenshot'
     },
     {
@@ -79,43 +81,50 @@
     });
   }
 
+  function thumbHTML(p) {
+    if (p.img) {
+      return '<div class="thumb thumb--photo"><img src="' + esc(p.img) + '" alt="' + esc(p.title) + ' screenshot" loading="lazy" /></div>';
+    }
+    return '<div class="thumb"><div class="frame"></div><div class="ph">Image placeholder<small>' + esc(p.ph) + '</small></div></div>';
+  }
+
   function cardHTML(p) {
     return '' +
       '<div class="flip reveal" tabindex="0" role="group" aria-label="' + esc(p.title) + ' — flip for details">' +
-        '<div class="flip-inner">' +
-          '<div class="face face-front">' +
-            '<div class="thumb"><div class="frame"></div><div class="ph">Image placeholder<small>' + esc(p.ph) + '</small></div></div>' +
-            '<div class="body">' +
-              '<p class="cat">' + esc(p.cat) + '</p>' +
-              '<h3>' + esc(p.title) + '</h3>' +
-              '<p class="sub">' + esc(p.sub) + '</p>' +
-              '<div class="tags">' + p.tags.map(function (t) { return '<span class="tag">' + esc(t) + '</span>'; }).join('') + '</div>' +
-            '</div>' +
-          '</div>' +
-          '<div class="face face-back">' +
-            '<div class="body">' +
-              '<p class="cat">Detail</p>' +
-              '<h3>' + esc(p.title) + '</h3>' +
-              '<p class="desc">' + esc(p.desc) + '</p>' +
-              '<dl class="facts">' + p.facts.map(function (f) { return '<dt>' + esc(f[0]) + '</dt><dd>' + esc(f[1]) + '</dd>'; }).join('') + '</dl>' +
-              '<ul class="bullets">' + p.bullets.map(function (b) { return '<li>' + esc(b) + '</li>'; }).join('') + '</ul>' +
-              '<div class="links">' + p.links.map(function (l) { return '<a href="' + esc(l[1]) + '">' + esc(l[0]) + ' <span>→</span></a>'; }).join('') + '</div>' +
-            '</div>' +
-          '</div>' +
-        '</div>' +
+      '<div class="flip-inner">' +
+      '<div class="face face-front">' +
+      thumbHTML(p) +
+      '<div class="body">' +
+      '<p class="cat">' + esc(p.cat) + '</p>' +
+      '<h3>' + esc(p.title) + '</h3>' +
+      '<p class="sub">' + esc(p.sub) + '</p>' +
+      '<div class="tags">' + p.tags.map(function (t) { return '<span class="tag">' + esc(t) + '</span>'; }).join('') + '</div>' +
+      '</div>' +
+      '</div>' +
+      '<div class="face face-back">' +
+      '<div class="body">' +
+      '<p class="cat">Detail</p>' +
+      '<h3>' + esc(p.title) + '</h3>' +
+      '<p class="desc">' + esc(p.desc) + '</p>' +
+      '<dl class="facts">' + p.facts.map(function (f) { return '<dt>' + esc(f[0]) + '</dt><dd>' + esc(f[1]) + '</dd>'; }).join('') + '</dl>' +
+      '<ul class="bullets">' + p.bullets.map(function (b) { return '<li>' + esc(b) + '</li>'; }).join('') + '</ul>' +
+      '<div class="links">' + p.links.map(function (l) { return '<a href="' + esc(l[1]) + '">' + esc(l[0]) + ' <span>→</span></a>'; }).join('') + '</div>' +
+      '</div>' +
+      '</div>' +
+      '</div>' +
       '</div>';
   }
 
   function itemHTML(p, i) {
     return '' +
       '<article class="item' + (i % 2 === 1 ? ' flip-side' : '') + '">' +
-        '<div class="slot-card">' + cardHTML(p) + '</div>' +
-        '<div class="marker" aria-hidden="true"></div>' +
-        '<div class="slot-note"><div class="note reveal">' +
-          '<p class="year">' + esc(p.year) + '</p>' +
-          '<p class="kind">' + esc(p.kind) + '</p>' +
-          '<p>' + esc(p.note) + '</p>' +
-        '</div></div>' +
+      '<div class="slot-card">' + cardHTML(p) + '</div>' +
+      '<div class="marker" aria-hidden="true"></div>' +
+      '<div class="slot-note"><div class="note reveal">' +
+      '<p class="year">' + esc(p.year) + '</p>' +
+      '<p class="kind">' + esc(p.kind) + '</p>' +
+      '<p>' + esc(p.note) + '</p>' +
+      '</div></div>' +
       '</article>';
   }
 
