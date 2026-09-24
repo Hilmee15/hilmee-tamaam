@@ -192,7 +192,7 @@
     var view = route === 'projects' ? 'projects' : 'home';
     Object.keys(views).forEach(function (k) { views[k].classList.toggle('active', k === view); });
     navLinks.forEach(function (a) { a.classList.toggle('active', a.getAttribute('data-nav') === route); });
-    document.title = view === 'projects' ? 'Projects — Your Name' : 'Your Name — Full-Stack & Mobile Developer';
+    document.title = view === 'projects' ? 'Projects — Ahmad Hilmi Tamaam' : 'Ahmad Hilmi Tamaam — Full-Stack & Mobile Developer';
 
     if (route === 'contact') {
       var target = document.getElementById('contact');
