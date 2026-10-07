@@ -999,44 +999,28 @@ p {
 
 .toast {
   position: fixed;
-  left: 50%;
-  bottom: 28px;
-  transform: translate(-50%, 16px);
-  opacity: 0;
-  pointer-events: none;
+  bottom: 20px;
+  left: 20px;
   background: var(--ink);
-  color: #FDFBF7;
-  border-radius: 12px;
+  color: var(--snow);
   padding: 12px 20px;
-  font-size: 14px;
-  z-index: 90;
-  transition: opacity .25s ease, transform .25s ease;
-  box-shadow: var(--shadow-lg);
+  border-radius: 8px;
+  font-size: 13px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity .3s ease, transform .3s ease;
+  pointer-events: none;
 }
 
 .toast.show {
   opacity: 1;
-  transform: translate(-50%, 0);
+  transform: translateY(0);
 }
 
 /* ============================================================
-   RESPONSIVE
+   MOBILE RESPONSIVE
    ============================================================ */
-@media (max-width:1024px) {
-  :root {
-    --card-h: 460px;
-  }
-
-  .item {
-    grid-template-columns: 1fr 72px 1fr;
-  }
-
-  .marker::before {
-    width: 36px;
-  }
-}
-
-@media (max-width:860px) {
+@media (max-width: 768px) {
   .nav {
     display: none;
   }
@@ -1045,211 +1029,81 @@ p {
     display: block;
   }
 
-  .hero {
-    padding: 64px 0 44px;
+  .item {
+    grid-template-columns: 1fr;
+    margin-bottom: 44px;
   }
 
-  :root {
-    --card-h: 520px;
+  .item .slot-card,
+  .item .slot-note,
+  .item.flip-side .slot-card,
+  .item.flip-side .slot-note {
+    grid-column: 1;
+    text-align: left;
+  }
+
+  .rail,
+  .rail-fill,
+  .marker {
+    display: none;
+  }
+
+  .flip {
+    height: auto;
   }
 
   .disc {
     grid-template-columns: 1fr;
   }
 
-  .rail,
-  .rail-fill {
-    left: 11px;
-    transform: none;
+  .sec {
+    padding: 60px 0 20px;
   }
 
-  .item {
-    grid-template-columns: 24px 1fr;
-    gap: 0 22px;
-    margin-bottom: 48px;
+  .hero {
+    padding: 60px 0 40px;
   }
 
-  .item .slot-card,
-  .item.flip-side .slot-card {
-    grid-column: 2;
-    grid-row: 2;
-  }
-
-  .item .slot-note,
-  .item.flip-side .slot-note {
-    grid-column: 2;
-    grid-row: 1;
-    text-align: left;
-    margin-bottom: 18px;
-  }
-
-  .item.flip-side .note {
-    margin-left: 0;
-  }
-
-  .marker {
-    grid-column: 1;
-    grid-row: 1;
-    justify-self: start;
-    align-self: start;
-    margin-top: 14px;
-  }
-
-  .marker::before {
-    display: none;
+  .closing {
+    padding: 80px 0 60px;
   }
 
   .note {
-    max-width: none;
-  }
-
-  .note .year {
-    font-size: 1.75rem;
-  }
-
-  .item .slot-card .reveal,
-  .item.flip-side .slot-card .reveal {
-    transform: translateY(24px);
+    max-width: 100%;
   }
 }
 
-@media (max-width:520px) {
+@media (max-width: 480px) {
   .wrap {
     padding: 0 16px;
   }
 
-  :root {
-    --card-h: 500px;
-    --radius: 16px;
-  }
-
-  .thumb {
-    height: 44%;
-  }
-
-  .face-front .body,
-  .face-back .body {
-    padding: 16px;
-    gap: 8px;
-  }
-
-  .face-front h3 {
-    font-size: 1.3rem;
-  }
-
-  .face-back h3 {
-    font-size: 1.1rem;
-  }
-
-  .sec {
-    padding: 56px 0 8px;
+  .head-row {
+    height: 56px;
   }
 
   .hero {
-    padding: 52px 0 36px;
+    padding: 50px 0 30px;
   }
 
-  .hero-lead {
-    font-size: 1rem;
+  .hero h1 {
+    font-size: clamp(1.75rem, 6vw, 2.75rem);
+  }
+
+  .closing h2 {
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
   }
 
   .btns {
     flex-direction: column;
-    align-items: stretch;
   }
 
   .btn {
+    width: 100%;
     text-align: center;
   }
 
-  .hero-meta {
-    gap: 8px;
-  }
-
-  .chip,
-  .status {
-    font-size: 12px;
-    padding: 6px 12px;
-  }
-
-  .closing {
-    padding: 76px 0 56px;
-  }
-
-  .disc>div {
-    padding: 24px 20px;
-  }
-
-  .facts {
-    grid-template-columns: auto 1fr;
-    font-size: 12.5px;
-  }
-
-  .bullets {
-    font-size: 13px;
-  }
-}
-
-@media (max-width:380px) {
-  :root {
-    --card-h: 470px;
-    --radius: 14px;
-  }
-
-  .wrap {
-    padding: 0 14px;
-  }
-
-  .thumb {
-    height: 40%;
-  }
-
-  .face-front h3 {
-    font-size: 1.15rem;
-  }
-
-  .face-front .sub {
-    font-size: 13px;
-  }
-
-  .tag {
-    font-size: 11px;
-    padding: 2px 8px;
-  }
-
-  .note .year {
-    font-size: 1.5rem;
-  }
-}
-
-@media (hover:none) {
-  .flip:hover .flip-inner {
-    transform: none;
-  }
-
-  .flip.flipped .flip-inner {
-    transform: rotateY(180deg);
-  }
-}
-
-@media (prefers-reduced-motion:reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation: none !important;
-    transition-duration: .01ms !important;
-  }
-
-  .reveal {
-    opacity: 1;
-    transform: none;
-  }
-
-  .view.active {
-    animation: none;
+  .item {
+    margin-bottom: 30px;
   }
 }
