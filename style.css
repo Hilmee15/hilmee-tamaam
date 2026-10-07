@@ -1077,7 +1077,8 @@ p {
   }
 
   .flip {
-    height: auto;
+    height: 100%;
+    min-height: 420px;
   }
 
   .disc {
@@ -1147,6 +1148,10 @@ p {
     margin-bottom: 28px;
   }
 
+  .flip {
+    min-height: 380px;
+  }
+
   .mobile-nav .wrap {
     gap: 10px;
     padding-top: 14px;
@@ -1169,5 +1174,27 @@ p {
   .sec-head p {
     margin-top: 14px;
     font-size: 0.95rem;
+  }
+
+  .face-front .body {
+    padding: 18px 20px;
+    gap: 8px;
+  }
+
+  .face-back .body {
+    padding: 20px;
+    gap: 12px;
+  }
+
+  .face-front h3 {
+    font-size: 1.35rem;
+  }
+
+  .face-back h3 {
+    font-size: 1.1rem;
+  }
+
+  .thumb {
+    height: 50%;
   }
 }
