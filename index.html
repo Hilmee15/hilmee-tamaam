@@ -1,263 +1,152 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ahmad Hilmi Tamaam — Full-Stack & Mobile Developer</title>
-    <meta
-      name="description"
-      content="Undergraduate computer science student building mobile, full-stack and cloud systems in Indonesia."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
+<html lang="en">
 
-  <body>
-    <header class="site-head">
-      <div class="wrap head-row">
-        <a class="brand" href="#/" data-link>
-          <span class="brand-name">Ahmad Hilmi Tamaam</span>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ahmad Hilmi Tamaam — Full-Stack & Mobile Developer</title>
+  <meta name="description"
+    content="Computer science undergraduate in Bandung building Flutter apps, Laravel platforms and cloud-ready services.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Sans:wght@400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="bar" id="bar"></div>
+  <header class="head" id="head">
+    <a class="logo" href="#top">Hilmee Tamaam</a>
+    <nav class="nav"><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#contact">Contact</a></nav>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"
+      aria-controls="menu"><i></i><i></i></button>
+  </header>
+  <div class="menu" id="menu"><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#contact">Contact</a><a class="menu-mail" href="mailto:ahmadhilmitamaam15@gmail.com">ahmadhilmitamaam15@gmail.com</a>
+  </div>
+
+  <main id="top">
+    <section class="hero">
+      <p class="meta"><span class="dot"></span>Undergraduate Computer Science student · Bandung, ID</p>
+      <h1><span class="ln"><span style="--d:.05s">Ahmad Hilmi</span></span><span class="ln"><span
+            style="--d:.18s">Tamaam<em>.</em></span></span></h1>
+      <div class="hero-foot">
+        <p>Full-stack &amp; mobile developer. Still learning a lot, but I like seeing an idea end up
+          as something real: Flutter Apps, Laravel platforms.</p>
+        <div class="btns"><a class="btn" href="#work">See selected work</a><a class="btn ghost" href="Resume/CV.pdf"
+            download="Ahmad_Hilmi_Tamaam_CV.pdf">Download CV</a></div>
+      </div>
+    </section>
+
+    <div class="mq">
+      <div><span>Flutter</span><span>Laravel</span><span>JavaScript</span><span>Kotlin</span></div>
+    </div>
+
+    <section class="sec wrap" id="about">
+      <div class="sec-head rv">
+        <p class="eyebrow">What I do best</p>
+        <h2>Two disciplines, one engineering mindset.</h2>
+        <p>Different tools, same habit: find the real constraint first, then build the smallest thing that satisfies
+          it.</p>
+      </div>
+      <div class="disc rv">
+        <div>
+          <p class="n">01</p>
+          <h3>Mobile development</h3>
+          <p>Flutter apps that get used, multi-screen navigation, local
+            notifications, and integrations people already live in.</p>
+          <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span
+              class="tag">Provider</span><span class="tag">SQLite</span><span class="tag">Firebase</span></div>
+        </div>
+        <div>
+          <p class="n">02</p>
+          <h3>Full-stack web development</h3>
+          <p>End-to-end product work: schema design, auth, file handling and clean admin flows — with a build step or
+            without one, depending on where it has to run.</p>
+          <div class="tags"><span class="tag">Laravel 11</span><span class="tag">PHP</span><span
+              class="tag">React</span><span class="tag">Node.js</span><span class="tag">MySQL</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec" id="projects">
+      <p class="label rv">/ Selected projects</p>
+      <div class="list" id="list">
+        <a class="row rv" href="#" data-c="#e8e8e8"><span class="n">01</span>
+          <h3>Rumah Kue Hany<small>Flutter app and website for a cake business. Orders land in WhatsApp,
+              pre-written.</small></h3>
+          <p>Flutter · Dart · WhatsApp</p><span class="y">2026</span>
         </a>
-
-        <nav class="nav" id="nav">
-          <a href="#/" data-link data-nav="home">Home</a>
-          <a href="#/projects" data-link data-nav="projects">Projects</a>
-          <a href="#/contact" data-link data-nav="contact">Contact</a>
-        </nav>
-
-        <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
-            <path d="M3 7h18M3 12h18M3 17h18" />
-          </svg>
-        </button>
+        <a class="row rv" href="https://github.com/Hilmee15/DeepfakeDetectorWeb" target="_blank" rel="noreferrer"
+          data-img="images/deepfake/deepfakeHome.png" data-c="#2438ff"><span class="n">02</span>
+          <h3>Deepfake Detector<small>React and Node frontend over a Flask-wrapped YOLO service, run with
+              docker-compose.</small></h3>
+          <p>React · Flask · YOLO · Docker</p><span class="y">2026</span>
+        </a>
+        <a class="row rv" href="https://github.com/Hilmee15/e-archive" target="_blank" rel="noreferrer"
+          data-img="images/e-archive/e-archiveHome.jpeg" data-c="#111"><span class="n">03</span>
+          <h3>E-Archive<small>Document archive with nested folders, trash and public links. No build step.</small></h3>
+          <p>Laravel 11 · MySQL · Vanilla JS</p><span class="y">2026</span>
+        </a>
+        <a class="row rv" href="https://github.com/Hilmee15/waypoint" target="_blank" rel="noreferrer"
+          data-c="#e8e8e8"><span class="n">04</span>
+          <h3>Waypoint<small>Name a goal and a weekly amount; it tells you the finish date.</small></h3>
+          <p>Flutter · Web + Android</p><span class="y">2026</span>
+        </a>
+        <a class="row rv" href="#" data-c="#e8e8e8"><span class="n">05</span>
+          <h3>VANET-NDN Caching<small>Research on in-network caching when the routers are moving cars.</small></h3>
+          <p>NDN · VANET · Simulation</p><span class="y">2026</span>
+        </a>
       </div>
+    </section>
 
-      <div class="mobile-nav" id="mobileNav">
-        <div class="wrap">
-          <a href="#/" data-link>/Home</a>
-          <a href="#/projects" data-link>/Projects</a>
-          <a href="#/contact" data-link>/Contact</a>
+    <section class="sec" id="experience">
+      <p class="label rv">/ Experience</p>
+      <ul class="exp">
+        <li class="ex rv"><span class="y">Present</span>
+          <h3>Undergraduate Computer Science</h3>
+          <p>Binus University Bandung</p>
+        </li>
+        <li class="ex rv"><span class="y">2026</span>
+          <h3>Full-stack developer</h3>
+          <p>E-Archive</p>
+        </li>
+        <li class="ex rv"><span class="y">2026</span>
+          <h3>Full-stack developer</h3>
+          <p>Rumah Kue Hany</p>
+        </li>
+        <li class="ex rv"><span class="y">2026</span>
+          <h3>Frontend &amp; infrastructure developer</h3>
+          <p>Deepfake Detector</p>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <section class="contact" id="contact">
+    <div class="mq big">
+      <div><span>Let's work together ✱</span><span>Let's work together ✱</span></div>
+    </div>
+    <div class="c-grid">
+      <div class="closing rv">
+        <p class="eyebrow">What's next</p>
+        <h2>Have something worth building?</h2>
+        <p>Tell me the constraint you're stuck on. That's usually where the interesting work is.</p>
+        <div class="btns">
+          <a class="btn" href="mailto:ahmadhilmitamaam15@gmail.com">Get in touch</a>
+          <button class="btn ghost copy-email" data-email="ahmadhilmitamaam15@gmail.com">Copy email</button>
         </div>
+        <p class="soc"><a href="https://github.com/Hilmee15" target="_blank" rel="noreferrer">GitHub</a><a
+            href="https://www.linkedin.com/in/hilmee15" target="_blank" rel="noreferrer">LinkedIn</a><a
+            href="mailto:ahmadhilmitamaam15@gmail.com">Email</a></p>
       </div>
-    </header>
+    </div>
+    <footer><span>2026 Ahmad Hilmi Tamaam</span></footer>
+  </section>
 
-    <main>
-      <div class="view active" id="view-home">
-        <section class="hero wrap">
-          <span class="status"><span class="dotmark"></span> Undergraduate CS student</span>
-          <h1 style="margin-top: 28px">
-            Ahmad Hilmi Tamaam,<br />
-            turning <span class="thin">ideas</span> into <span class="thin">reality</span>.
-          </h1>
-          <p class="hero-lead">
-            Computer science undergraduate in Indonesia. I've built Flutter apps for a couple of local businesses,
-            put together a machine-learning service using Docker. Still learning a lot, but I like seeing a rough idea
-            end up as something real.
-          </p>
+  <div class="pv" id="pv" aria-hidden="true"><img alt=""><span></span></div>
+  <script src="script.js"></script>
+</body>
 
-          <div class="btns">
-            <a class="btn" href="#/projects" data-link>Explore selected work</a>
-            <a class="btn ghost" href="Resume/CV.pdf" download="Ahmad_Hilmi_Tamaam_CV.pdf">Download CV / Resume</a>
-          </div>
-        </section>
-
-        <div class="ticker-band">
-          <div class="ticker">
-            <span class="ticker-item">Undergraduate student @Binus University Bandung<i></i></span>
-            <span class="ticker-item">10+ completed projects<i></i></span>
-            <span class="ticker-item">Flutter · JavaScript · Laravel · Kotlin<i></i></span>
-            <span class="ticker-item">VANET-NDN research paper<i></i></span>
-            <span class="ticker-item" aria-hidden="true">Undergraduate student @Binus University Bandung<i></i></span>
-            <span class="ticker-item" aria-hidden="true">10+ completed projects<i></i></span>
-            <span class="ticker-item" aria-hidden="true">Flutter · JavaScript · Laravel · Kotlin<i></i></span>
-            <span class="ticker-item" aria-hidden="true">VANET-NDN research paper<i></i></span>
-          </div>
-        </div>
-
-        <section class="sec wrap" id="about">
-          <div class="sec-head">
-            <p class="eyebrow">What I do best</p>
-            <h2>Two disciplines, one engineering mindset.</h2>
-            <p>
-              Different tools, same habit: find the real constraint first, then build the smallest thing that satisfies it.
-            </p>
-          </div>
-
-          <div class="disc">
-            <div>
-              <p class="n">01</p>
-              <h3>Mobile development</h3>
-              <p>Flutter apps that get used, multi-screen navigation, local notifications, and integrations people already live in.</p>
-              <div class="tags">
-                <span class="tag">Flutter</span>
-                <span class="tag">Dart</span>
-                <span class="tag">Provider</span>
-                <span class="tag">SQLite</span>
-                <span class="tag">Firebase</span>
-              </div>
-            </div>
-
-            <div>
-              <p class="n">02</p>
-              <h3>Full-stack engineering</h3>
-              <p>Build systems that can scale, ship quickly, and remain maintainable without growing into a mess.</p>
-              <div class="tags">
-                <span class="tag">JavaScript</span>
-                <span class="tag">Laravel</span>
-                <span class="tag">HTML</span>
-                <span class="tag">CSS</span>
-                <span class="tag">MySQL</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="projects wrap" id="projects">
-          <div class="sec-head">
-            <p class="eyebrow">Selected work</p>
-            <h2>Practical products and experiments.</h2>
-          </div>
-
-          <div class="timeline">
-            <article class="project-card">
-              <div class="project-media">
-                <div class="project-placeholder">Case study<small>Mobile + Web</small></div>
-              </div>
-
-              <div class="project-body">
-                <div class="project-kicker">Mobile App</div>
-                <h3 class="project-title">Sarana Sehat</h3>
-                <div class="project-sub">Healthcare booking flow redesign for local clinics.</div>
-
-                <div class="project-tags">
-                  <span class="project-tag">Flutter</span>
-                  <span class="project-tag">Firebase</span>
-                  <span class="project-tag">UI/UX</span>
-                </div>
-
-                <p class="project-desc">
-                  Designed a cleaner appointment experience with fewer steps, stronger trust signals,
-                  and a more readable information hierarchy.
-                </p>
-              </div>
-
-              <div class="project-meta">
-                <div class="project-year">2024</div>
-                <div class="project-kind">Product Design</div>
-                <p>Reduced friction in appointment flow and improved clarity for first-time users.</p>
-
-                <div class="project-links">
-                  <a href="#">View case <span>→</span></a>
-                  <a href="#">GitHub <span>→</span></a>
-                </div>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-media">
-                <div class="project-placeholder">Launch<small>Client project</small></div>
-              </div>
-
-              <div class="project-body">
-                <div class="project-kicker">Web Platform</div>
-                <h3 class="project-title">FurniFlow</h3>
-                <div class="project-sub">Inventory and order management dashboard.</div>
-
-                <div class="project-tags">
-                  <span class="project-tag">React</span>
-                  <span class="project-tag">Laravel</span>
-                  <span class="project-tag">Admin</span>
-                </div>
-
-                <p class="project-desc">
-                  Built a lightweight admin dashboard for managing stock, sales activity,
-                  and recurring order updates across multiple store locations.
-                </p>
-              </div>
-
-              <div class="project-meta">
-                <div class="project-year">2023</div>
-                <div class="project-kind">Dashboard</div>
-                <p>Focused on operational clarity and faster decision-making for store managers.</p>
-
-                <div class="project-links">
-                  <a href="#">Case study <span>→</span></a>
-                  <a href="#">Live demo <span>→</span></a>
-                </div>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-media">
-                <div class="project-placeholder">Experiment<small>AI + backend</small></div>
-              </div>
-
-              <div class="project-body">
-                <div class="project-kicker">Machine Learning</div>
-                <h3 class="project-title">Smart Intake</h3>
-                <div class="project-sub">Document classification service with a simple API layer.</div>
-
-                <div class="project-tags">
-                  <span class="project-tag">Python</span>
-                  <span class="project-tag">Docker</span>
-                  <span class="project-tag">API</span>
-                </div>
-
-                <p class="project-desc">
-                  Created a modular service that processes structured submissions and routes them to the right internal workflow.
-                </p>
-              </div>
-
-              <div class="project-meta">
-                <div class="project-year">2022</div>
-                <div class="project-kind">Prototype</div>
-                <p>Balanced speed and flexibility to support future automation experiments.</p>
-
-                <div class="project-links">
-                  <a href="#">Read more <span>→</span></a>
-                </div>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="sec wrap" id="contact">
-          <div class="closing">
-            <p class="eyebrow">Let's talk</p>
-            <h2>Ready to build something useful?</h2>
-            <p>
-              I’m open to internships, freelance work, and product collaborations.
-            </p>
-
-            <div class="btns">
-              <a class="btn" href="mailto:hilmi.tamaam@gmail.com">Email me</a>
-              <a class="btn ghost" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
-            </div>
-
-            <div class="socials">
-              <a href="https://github.com/Hilmee15" target="_blank" rel="noreferrer">GitHub</a>
-              <a href="https://www.linkedin.com/in/hilmee15" target="_blank" rel="noreferrer">LinkedIn</a>
-              <a href="mailto:hilmi.tamaam@gmail.com">Email</a>
-            </div>
-          </div>
-        </section>
-      </div>
-    </main>
-
-    <footer class="site-foot">
-      <div class="wrap foot-row">
-        <span>© 2026 Ahmad Hilmi Tamaam</span>
-        <span>Made with care in Bandung</span>
-      </div>
-    </footer>
-
-    <div class="toast" id="toast"></div>
-
-    <script src="script.js"></script>
-  </body>
 </html>
