@@ -4,14 +4,14 @@ export const disciplines = [
   {
     n: '01',
     title: 'Mobile development',
-    body: 'Flutter apps that get used, multi-screen navigation, local notifications, and integrations people already live in.',
-    tags: ['Flutter', 'Dart', 'Provider', 'SQLite', 'Firebase'],
+    body: 'Flutter apps that get used: a savings-goal tracker shipping to web and Android, local notifications, and handing orders to WhatsApp pre-written.',
+    tags: ['Flutter', 'Dart', 'Android', 'Web'],
   },
   {
     n: '02',
     title: 'Full-stack web development',
-    body: 'End-to-end product work: schema design, auth, file handling and clean admin flows, with a build step or without one, depending on where it has to run.',
-    tags: ['Laravel 11', 'PHP', 'React', 'Node.js', 'MySQL'],
+    body: 'End-to-end work on Express and Laravel: schema design, auth, file uploads and admin flows. React when the interface needs it, plain HTML when it doesn\'t.',
+    tags: ['Node.js', 'Express', 'SQLite', 'Laravel 11', 'React', 'MySQL'],
   },
 ]
 
@@ -19,10 +19,10 @@ export const projects = [
   {
     n: '01',
     title: 'Rumah Kue Hany',
-    desc: 'Flutter app and website for a cake business. Orders land in WhatsApp, pre-written.',
-    stack: 'Flutter · Dart · WhatsApp',
+    desc: 'A full-stack ordering website for a local bakery, where customers order directly on the site and track their orders through order codes.',
+    stack: 'Node.js · Express · SQLite · HTML/CSS',
     year: '2026',
-    href: 'https://github.com/Hilmee15/rumahkuehany',
+    href: 'https://rumahkuehany.vercel.app',
     img: 'images/rumahkuehany/rumahkuehanyHeader.png',
     c: '#e8e8e8',
   },
@@ -80,6 +80,6 @@ export const experience = [
   { y: 'Present', title: 'Undergraduate Computer Science', org: 'Binus University Bandung' },
   { y: '2026', title: 'Full-stack developer', org: 'E-Archive' },
   { y: '2026', title: 'Full-stack developer', org: 'Rumah Kue Hany' },
-  { y: '2026', title: 'Frontend & infrastructure developer', org: 'Deepfake Detector' },
+  { y: '2026', title: 'Frontend developer', org: 'Deepfake Detector' },
   { y: '2026', title: 'UI/UX Designer', org: 'Laras' },
 ]
