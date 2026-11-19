@@ -16,7 +16,7 @@ export default function Experience() {
   const labelRef = useReveal()
   return (
     <section className="sec" id="experience">
-      <p className="label rv" ref={labelRef}>/ Experience</p>
+      <p className="label rv" ref={labelRef}>Experience</p>
       <ul className="exp">
         {experience.map((item) => <ExpItem key={item.title + item.org} item={item} />)}
       </ul>

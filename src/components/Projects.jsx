@@ -6,7 +6,7 @@ const canPreview = finePointer && !reducedMotion
 
 function Label() {
   const ref = useReveal()
-  return <p className="label rv" ref={ref}>/ Selected projects</p>
+  return <p className="label rv" ref={ref}>Selected projects</p>
 }
 
 function ProjectRow({ p, onEnter, onLeave }) {
